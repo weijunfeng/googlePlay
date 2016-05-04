@@ -1,0 +1,85 @@
+package org.itheima56.googleplay.factory;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.itheima56.googleplay.HomeFragment;
+import org.itheima56.googleplay.utils.LogUtils;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.util.SparseArrayCompat;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.factory
+ * @类名: FragmentFactory
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-4 下午2:48:52
+ * @描述: 获得模块的工厂
+ * 
+ * @svn版本: $Rev: 12 $
+ * @更新人: $Author: xq $
+ * @更新时间: $Date: 2015-05-04 14:58:56 +0800 (Mon, 04 May 2015) $
+ * @更新描述: TODO
+ */
+public class FragmentFactory
+{
+	// private static Map<Integer, Fragment> mCaches = new HashMap<Integer,
+	// Fragment>();
+	private static SparseArrayCompat<Fragment>	mCaches	= new SparseArrayCompat<Fragment>();
+
+	public static Fragment getFragment(int position)
+	{
+
+		// <item>首页</item>
+		// <item>应用</item>
+		// <item>游戏</item>
+		// <item>专题</item>
+		// <item>推荐</item>
+		// <item>分类</item>
+		// <item>排行</item>
+
+		// 去缓存中取
+		Fragment fragment = mCaches.get(position);
+		if (fragment != null)
+		{
+			LogUtils.d("使用" + position + "的缓存");
+			// 缓存中有
+			return fragment;
+		}
+
+		switch (position)
+		{
+			case 0:
+				// 首页
+				fragment = new HomeFragment();
+				break;
+			case 1:
+				fragment = new HomeFragment();
+				break;
+			case 2:
+				fragment = new HomeFragment();
+				break;
+			case 3:
+				fragment = new HomeFragment();
+				break;
+			case 4:
+				fragment = new HomeFragment();
+				break;
+			case 5:
+				fragment = new HomeFragment();
+				break;
+			case 6:
+				fragment = new HomeFragment();
+				break;
+			default:
+				break;
+		}
+
+		// 缓存起来
+		LogUtils.d("为" + position + "缓存");
+		mCaches.put(position, fragment);
+
+		return fragment;
+	}
+}

@@ -1,0 +1,58 @@
+package org.itheima56.googleplay.holder;
+
+import org.itheima56.googleplay.R;
+import org.itheima56.googleplay.bean.AppInfoBean;
+import org.itheima56.googleplay.utils.UIUtils;
+
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+
+import android.provider.Contacts.Intents.UI;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.holder
+ * @类名: AppDetailDesHolder
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-8 下午3:22:55
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class AppDetailDesHolder extends BaseHolder<AppInfoBean>
+{
+
+	@ViewInject(R.id.app_detail_des_tv_des)
+	private TextView	mTvDes;
+
+	@ViewInject(R.id.app_detail_des_tv_author)
+	private TextView	mTvAuthor;
+
+	@ViewInject(R.id.app_detail_des_iv_arrow)
+	private ImageView	mIvArrow;
+
+	@Override
+	protected View initView()
+	{
+		View view = View.inflate(UIUtils.getContext(), R.layout.item_app_detail_des, null);
+
+		// 注入
+		ViewUtils.inject(this, view);
+
+		return view;
+	}
+
+	@Override
+	protected void refreshUI(AppInfoBean data)
+	{
+		mTvAuthor.setText("作者 : " + data.author);
+		mTvDes.setText(data.des);
+	}
+
+}

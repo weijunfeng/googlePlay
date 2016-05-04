@@ -1,0 +1,64 @@
+package org.itheima56.googleplay.http;
+
+import java.util.List;
+
+import org.itheima56.googleplay.bean.AppInfoBean;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonNull;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.JsonPrimitive;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.http
+ * @类名: GameProtocol
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-7 上午8:33:56
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class GameProtocol extends BaseProtocol<List<AppInfoBean>>
+{
+	// T ---> 需要返回什么数据
+
+	@Override
+	protected String getInterfaceKey()
+	{
+		return "game";
+	}
+
+	@Override
+	protected List<AppInfoBean> parseJson(String json)
+	{
+		// json解析 : Gson 的 节点解析
+
+		// JsonElement: json元素---> 只要是节点都是元素
+		// JsonObject : json--> 包含多个节点的
+		// JsonArray : 节点以[]开始和结尾的
+		// JsonPrimitive : value是数字类型，boolean，String
+		// JsonNull : value 为 NULL
+
+		// 新建解析器
+		JsonParser parser = new JsonParser();
+
+		// 解析json
+		JsonElement rootElement = parser.parse(json);
+
+		// 将根节点具体化类型
+		JsonArray rootArray = rootElement.getAsJsonArray();// 获取实际类型
+
+		
+		
+		
+
+		return null;
+	}
+
+}

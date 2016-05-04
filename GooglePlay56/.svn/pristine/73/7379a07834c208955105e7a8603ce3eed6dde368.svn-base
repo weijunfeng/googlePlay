@@ -1,0 +1,36 @@
+package org.itheima56.googleplay;
+
+import org.itheima56.googleplay.utils.UIUtils;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay
+ * @类名: HomeFragment
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-4 下午2:51:17
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class HomeFragment extends Fragment
+{
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+	{
+		TextView tv = new TextView(UIUtils.getContext());
+		tv.setText("首页");
+
+		return tv;
+	}
+}

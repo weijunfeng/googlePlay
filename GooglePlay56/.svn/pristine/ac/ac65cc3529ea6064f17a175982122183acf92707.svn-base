@@ -1,0 +1,65 @@
+package org.itheima56.googleplay.factory;
+
+import org.itheima56.googleplay.HomeFragment;
+
+import android.support.v4.app.Fragment;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.factory
+ * @类名: FragmentFactory
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-4 下午2:48:52
+ * @描述: 获得模块的工厂
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class FragmentFactory
+{
+
+	public static Fragment getFragment(int position)
+	{
+
+		// <item>首页</item>
+		// <item>应用</item>
+		// <item>游戏</item>
+		// <item>专题</item>
+		// <item>推荐</item>
+		// <item>分类</item>
+		// <item>排行</item>
+		Fragment fragment = null;
+
+		switch (position)
+		{
+			case 0:
+				// 首页
+				fragment = new HomeFragment();
+				break;
+			case 1:
+				fragment = new HomeFragment();
+				break;
+			case 2:
+				fragment = new HomeFragment();
+				break;
+			case 3:
+				fragment = new HomeFragment();
+				break;
+			case 4:
+				fragment = new HomeFragment();
+				break;
+			case 5:
+				fragment = new HomeFragment();
+				break;
+			case 6:
+				fragment = new HomeFragment();
+				break;
+			default:
+				break;
+		}
+
+		return fragment;
+	}
+}

@@ -1,0 +1,65 @@
+package org.itheima56.googleplay.holder;
+
+import org.itheima56.googleplay.R;
+import org.itheima56.googleplay.bean.CategoryBean;
+import org.itheima56.googleplay.utils.UIUtils;
+
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.holder
+ * @类名: CategoryItemHolder
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-7 下午3:42:28
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev: 36 $
+ * @更新人: $Author: xq $
+ * @更新时间: $Date: 2015-05-07 15:46:26 +0800 (Thu, 07 May 2015) $
+ * @更新描述: TODO
+ */
+public class CategoryItemHolder extends BaseHolder<CategoryBean>
+{
+	@ViewInject(R.id.item_category_icon_1)
+	private ImageView	mIv1;
+
+	@ViewInject(R.id.item_category_icon_2)
+	private ImageView	mIv2;
+
+	@ViewInject(R.id.item_category_icon_3)
+	private ImageView	mIv3;
+
+	@ViewInject(R.id.item_category_name_1)
+	private TextView	mTv1;
+
+	@ViewInject(R.id.item_category_name_2)
+	private TextView	mTv2;
+
+	@ViewInject(R.id.item_category_name_3)
+	private TextView	mTv3;
+
+	@Override
+	protected View initView()
+	{
+		View view = View.inflate(UIUtils.getContext(), R.layout.item_category, null);
+
+		// 注入
+		ViewUtils.inject(this, view);
+
+		return view;
+	}
+
+	@Override
+	protected void refreshUI(CategoryBean data)
+	{
+		//
+		
+	}
+
+}

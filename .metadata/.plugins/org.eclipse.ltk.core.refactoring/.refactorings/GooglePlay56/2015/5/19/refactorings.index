@@ -1,0 +1,34 @@
+1430707480129	Convert local variable 'mActionBar' to field
+1430708932041	Copy file
+1430709628445	Convert local variable 'mTitles' to field
+1430725053789	Move compilation unit
+1430728610909	Convert local variable 'loadingPager' to field
+1430728619982	Rename field 'loadingPager'
+1430872831494	Move compilation unit
+1430874195349	Rename field 'corePoolSize'
+1430874200040	Rename field 'maximumPoolSize'
+1430874204905	Rename field 'keepAliveTime'
+1430876442883	Extract method 'getThreadPoolExecutor'
+1430876456462	Rename method 'getThreadPoolExecutor'
+1430882290795	Rename type 'HomeBeam'
+1430882364891	Move compilation unit
+1430895100258	Copy file
+1430901195318	Extract method 'getDataFromNet'
+1430902216645	Extract method 'getCahceFile'
+1430960662865	Convert local variable 'mDatas' to field
+1430963187043	Convert local variable 'downX' to field
+1430963191384	Convert local variable 'downY' to field
+1430965170933	Convert local variable 'mDatas' to field
+1430979431336	Convert local variable 'mDatas' to field
+1430983572834	Convert local variable 'mDatas' to field
+1430984419718	Rename local variable 'tv'
+1430984421945	Convert local variable 'mTv' to field
+1430984582543	Convert local variable 'tv' to field
+1431046797453	Convert local variable 'mDatas' to field
+1431048110760	Convert local variable 'rootView' to field
+1431048174480	Convert local variable 'listener' to field
+1431049542952	Convert local variable 'mAdatper' to field
+1431051930958	Convert local variable 'mData' to field
+1431067063684	Extract method 'doAnimation'
+1431071014940	Convert local variable 'mDesWdith' to field
+1431071427576	Extract method 'doAnimation'

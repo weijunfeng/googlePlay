@@ -1,0 +1,136 @@
+package org.itheima56.googleplay.fragment;
+
+import java.util.List;
+
+import org.itheima56.googleplay.fragment.LoadingPager.LoadedResult;
+import org.itheima56.googleplay.http.RecommendProtocol;
+import org.itheima56.googleplay.utils.UIUtils;
+import org.itheima56.googleplay.widget.StellarMap;
+
+import android.view.View;
+import android.widget.TextView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.fragment
+ * @类名: RecommendFragment
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-8 上午8:56:35
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class RecommendFragment extends BaseFragment
+{
+	private RecommendProtocol	mProtocol;
+	private List<String>		mDatas;
+
+	@Override
+	protected View onLoadSuccessView()
+	{
+		StellarMap rootView = new StellarMap(UIUtils.getContext());
+
+		// 设置数据的方法
+		rootView.setAdapter(null);
+
+		return rootView;
+	}
+
+	@Override
+	protected LoadedResult onLoadingData()
+	{
+
+		mProtocol = new RecommendProtocol();
+
+		try
+		{
+			mDatas = mProtocol.loadData(0);
+			return checkData(mDatas);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return LoadedResult.ERROR;
+		}
+	}
+
+	class RecommendAdapter implements StellarMap.Adapter
+	{
+		private final static int	PER_PAGE_SIZE	= 15;
+
+		// 有几页面
+		@Override
+		public int getGroupCount()
+		{
+			if (mDatas != null)
+			{
+				int size = mDatas.size();
+
+				int count = size / PER_PAGE_SIZE;
+
+				if (size % PER_PAGE_SIZE > 0)
+				{
+					count++;
+				}
+				return count;
+			}
+			return 0;
+		}
+
+		// 第group页面有几条数据
+		@Override
+		public int getCount(int group)
+		{
+			if (mDatas != null)
+			{
+
+				int size = mDatas.size();
+
+				// 如果是最后一页
+				if (group == getGroupCount())
+				{
+					if (size % PER_PAGE_SIZE > 0)
+					{
+						// 最后一页有多余,不够一页的数量
+						return size % PER_PAGE_SIZE;
+					}
+					else
+					{
+						return PER_PAGE_SIZE;
+					}
+				}
+				return PER_PAGE_SIZE;
+			}
+			return 0;
+		}
+
+		// 提供View显示
+		@Override
+		public View getView(int group, int position, View convertView)
+		{
+			// 返回随机大小，随机颜色的textView
+			TextView tv = new TextView(UIUtils.getContext());
+
+			return null;
+		}
+
+		@Override
+		public int getNextGroupOnPan(int group, float degree)
+		{
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public int getNextGroupOnZoom(int group, boolean isZoomIn)
+		{
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+	}
+
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>[code]进度条的实现</CommitComment>
+	<CommitComment>[code]添加observer</CommitComment>
+	<CommitComment>[code]下载状态的逻辑分析</CommitComment>
+	<CommitComment>[code]下载部分布局的实现</CommitComment>
+	<CommitComment>[code]BaseActivity的抽取</CommitComment>
+	<CommitComment>[code]描述部分滚动的处理</CommitComment>
+	<CommitComment>[code]描述部分数据的加载</CommitComment>
+	<CommitComment>[code] 图片部分的实现</CommitComment>
+	<CommitComment>[code] 安全部分动画的实现</CommitComment>
+	<CommitComment>[code]应用安全部分动态布局的添加</CommitComment>
+</CommitComments>

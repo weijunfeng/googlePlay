@@ -1,0 +1,37 @@
+package org.itheima56.googleplay.holder;
+
+import org.itheima56.googleplay.bean.SubjectBean;
+
+import android.view.View;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.holder
+ * @类名: SubjectHolder
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-7 上午10:42:18
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class SubjectHolder extends BaseHolder<SubjectBean>
+{
+
+	@Override
+	protected View initView()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void refreshUI(SubjectBean data)
+	{
+		// TODO Auto-generated method stub
+
+	}
+
+}

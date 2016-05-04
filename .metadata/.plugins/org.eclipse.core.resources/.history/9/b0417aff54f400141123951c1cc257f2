@@ -1,0 +1,53 @@
+package org.itheima56.googleplay.fragment;
+
+import java.util.List;
+
+import org.itheima56.googleplay.bean.AppInfoBean;
+import org.itheima56.googleplay.fragment.LoadingPager.LoadedResult;
+import org.itheima56.googleplay.http.GameProtocol;
+
+import android.view.View;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.fragment
+ * @类名: GameFragment
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-7 上午8:32:57
+ * @描述: 游戏界面
+ * 
+ * @svn版本: $Rev: 24 $
+ * @更新人: $Author: xq $
+ * @更新时间: $Date: 2015-05-07 09:03:29 +0800 (Thu, 07 May 2015) $
+ * @更新描述: TODO
+ */
+public class GameFragment extends BaseFragment
+{
+	private GameProtocol	mProtocol;
+
+	@Override
+	protected View onLoadSuccessView()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected LoadedResult onLoadingData()
+	{
+		mProtocol = new GameProtocol();
+
+		// 加载数据
+		try
+		{
+			List<AppInfoBean> mDatas = mProtocol.loadData(0);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return LoadedResult.ERROR;
+		}
+
+	}
+
+}

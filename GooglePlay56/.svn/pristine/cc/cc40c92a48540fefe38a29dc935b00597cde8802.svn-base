@@ -1,0 +1,54 @@
+package org.itheima56.googleplay.adapter;
+
+import java.util.List;
+
+import org.itheima56.googleplay.AppDetailActivity;
+import org.itheima56.googleplay.bean.AppInfoBean;
+import org.itheima56.googleplay.holder.AppItemHolder;
+import org.itheima56.googleplay.holder.BaseHolder;
+import org.itheima56.googleplay.utils.UIUtils;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
+import android.widget.AbsListView;
+import android.widget.AdapterView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.adapter
+ * @类名: AppListAdapter
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-8 上午9:54:38
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class AppListAdapter extends SuperBaseAdapter<AppInfoBean>
+{
+
+	public AppListAdapter(AbsListView listView, List<AppInfoBean> datas) {
+		super(listView, datas);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	protected BaseHolder<AppInfoBean> getItemHolder(int position)
+	{
+		return new AppItemHolder();
+	}
+
+	@Override
+	protected void onNoramlItemClick(AdapterView<?> parent, View view, int position, long id)
+	{
+		// 跳转到应用详情页面
+		Context context = UIUtils.getContext();
+		Intent intent = new Intent(context, AppDetailActivity.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(intent);
+	}
+
+}

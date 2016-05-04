@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RatioLayout">
+        <attr name="ratio" format="float" />
+        <attr name="relative">
+             <enum name="none" value="0" />
+        <enum name="start" value="1" />
+        <enum name="middle" value="2" />
+        <enum name="end" value="3" />
+        <enum name="marquee" value="4" />
+        </attr>
+    </declare-styleable>
+
+</resources>

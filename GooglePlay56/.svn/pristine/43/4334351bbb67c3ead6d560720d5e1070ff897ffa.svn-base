@@ -1,0 +1,55 @@
+package org.itheima56.googleplay.fragment;
+
+import org.itheima56.googleplay.R;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.FrameLayout;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.fragment
+ * @类名: LoadingPager
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-4 下午3:48:24
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class LoadingPager extends FrameLayout
+{
+	// View 需要包含 加载中，空页面，错误界面，成功，并且控制他们是否显示
+
+	private View	mLoadingView;
+
+	public LoadingPager(Context context) {
+		super(context);
+
+		initView();
+	}
+
+	public LoadingPager(Context context, AttributeSet attrs) {
+		super(context, attrs);
+
+		initView();
+	}
+
+	private void initView()
+	{
+		// 加载 （加载中，空页面，错误界面，成功）
+
+		// 加载中
+		if (mLoadingView == null)
+		{
+			mLoadingView = View.inflate(getContext(), R.layout.pager_loading, null);
+			// 添加到容器中
+			addView(mLoadingView);
+		}
+
+	}
+
+}

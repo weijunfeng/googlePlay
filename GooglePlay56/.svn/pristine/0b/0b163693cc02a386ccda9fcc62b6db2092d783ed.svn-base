@@ -1,0 +1,28 @@
+package org.itheima56.googleplay.bean;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.bean
+ * @类名: AppInfoBean
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-6 上午11:19:21
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class AppInfoBean
+{
+
+	public String	des;			// 应用的描述
+	public String	downloadUrl;	// 应用下载地址
+	public String	iconUrl;		// 应用图标
+	public long		id;
+	public String	name;			// 应用名称
+	public String	packageName;	// 应用的包名
+	public long		size;			// 应用的大小
+	public float	stars;			// 应用的点赞 4
+
+}

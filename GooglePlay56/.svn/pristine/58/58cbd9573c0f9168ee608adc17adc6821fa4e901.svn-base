@@ -1,0 +1,49 @@
+package org.itheima56.googleplay.holder;
+
+import org.itheima56.googleplay.R;
+import org.itheima56.googleplay.bean.AppInfoBean;
+import org.itheima56.googleplay.utils.UIUtils;
+
+import android.view.View;
+import android.widget.TextView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.holder
+ * @类名: AppItemHolder
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-6 上午10:51:26
+ * @描述: 首页，应用，游戏页面listView对应的item的holder
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class AppItemHolder extends BaseHolder<AppInfoBean>
+{
+	// T ---> item 对应的数据
+	// private TextView tv1;
+	// private TextView tv2;
+
+	@Override
+	protected View initView()
+	{
+		View view = View.inflate(UIUtils.getContext(), R.layout.item_app_info, null);
+
+		// 初始化View
+		// tv1 = (TextView) view.findViewById(R.id.tmp_tv_1);
+		// tv2 = (TextView) view.findViewById(R.id.tmp_tv_2);
+
+		return view;
+	}
+
+	@Override
+	protected void refreshUI(AppInfoBean data)
+	{
+		// 给View设置数据
+		// tv1.setText("头-" + data);
+		// tv2.setText("内容-" + data);
+	}
+
+}

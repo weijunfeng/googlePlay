@@ -1,0 +1,73 @@
+package org.itheima56.googleplay.fragment;
+
+import java.util.List;
+
+import org.itheima56.googleplay.fragment.LoadingPager.LoadedResult;
+import org.itheima56.googleplay.http.HotProtocol;
+import org.itheima56.googleplay.utils.UIUtils;
+import org.itheima56.googleplay.widget.FlowLayout;
+
+import android.view.View;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.fragment
+ * @类名: HotFragment
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-7 下午2:13:23
+ * @描述: 排行页面
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class HotFragment extends BaseFragment
+{
+	private HotProtocol		mProtocol;
+	private List<String>	mDatas;
+
+	@Override
+	protected View onLoadSuccessView()
+	{
+		// UI展示
+		ScrollView rootView = new ScrollView(UIUtils.getContext());
+
+		// 加载流式布局
+		FlowLayout layout = new FlowLayout(UIUtils.getContext());
+		rootView.addView(layout);
+
+		// 给流式加载数据
+		for (int i = 0; i < mDatas.size(); i++)
+		{
+			String data = mDatas.get(i);
+
+			TextView tv = new TextView(UIUtils.getContext());
+			tv.setText(data);
+
+			layout.addView(tv);
+		}
+
+		return rootView;
+	}
+
+	@Override
+	protected LoadedResult onLoadingData()
+	{
+		mProtocol = new HotProtocol();
+
+		try
+		{
+			mDatas = mProtocol.loadData(0);
+			return checkData(mDatas);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return LoadedResult.ERROR;
+		}
+	}
+
+}

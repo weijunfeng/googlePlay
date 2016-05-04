@@ -1,0 +1,87 @@
+package org.itheima56.googleplay.utils;
+
+import org.itheima56.googleplay.BaseApplication;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Handler;
+import android.widget.BaseAdapter;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.utils
+ * @类名: UIUtils
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-4 上午10:26:29
+ * @描述: 提供UI操作的工具类
+ * 
+ * @svn版本: $Rev: 11 $
+ * @更新人: $Author: xq $
+ * @更新时间: $Date: 2015-05-04 14:44:06 +0800 (Mon, 04 May 2015) $
+ * @更新描述: TODO
+ */
+public class UIUtils
+{
+	/**
+	 * 上下文
+	 * 
+	 * @return
+	 */
+	public static Context getContext()
+	{
+		return BaseApplication.getContext();
+	}
+
+	public static Resources getResources()
+	{
+		return getContext().getResources();
+	}
+
+	public static String getString(int resId)
+	{
+		return getResources().getString(resId);
+	}
+
+	public static String[] getStringArray(int resId)
+	{
+		return getResources().getStringArray(resId);
+	}
+
+	public static String getPackageName()
+	{
+		return getContext().getPackageName();
+	}
+
+	public static int getColor(int resId)
+	{
+		return getResources().getColor(resId);
+	}
+
+	public static Handler getMainHandler()
+	{
+		return BaseApplication.getMainHandler();
+	}
+
+	public static long getMainThreadId()
+	{
+		return BaseApplication.getMainThreadId();
+	}
+
+	/**
+	 * 让task在主线程中执行
+	 */
+	public static void post(Runnable task)
+	{
+		int myTid = android.os.Process.myTid();
+		
+		if (condition)
+		{
+			// 在主线程中执行的
+		}
+		else
+		{
+			// 在子线程中执行的
+			getMainHandler().post(task);
+		}
+	}
+}

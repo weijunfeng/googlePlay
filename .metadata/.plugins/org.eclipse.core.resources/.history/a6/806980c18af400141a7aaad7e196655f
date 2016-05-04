@@ -1,0 +1,57 @@
+package org.itheima56.googleplay.fragment;
+
+import java.util.List;
+
+import org.itheima56.googleplay.bean.CategoryBean;
+import org.itheima56.googleplay.fragment.LoadingPager.LoadedResult;
+import org.itheima56.googleplay.http.CategoryProtocol;
+import org.itheima56.googleplay.utils.UIUtils;
+
+import android.view.View;
+import android.widget.TextView;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.fragment
+ * @类名: CategoryFragment
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-7 下午3:06:11
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class CategoryFragment extends BaseFragment
+{
+	private CategoryProtocol	mProtocol;
+	private List<CategoryBean>	mDatas;
+
+	@Override
+	protected View onLoadSuccessView()
+	{
+		TextView tv = new TextView(UIUtils.getContext());
+	
+		return tv;
+	}
+
+	@Override
+	protected LoadedResult onLoadingData()
+	{
+		try
+		{
+			mDatas = mProtocol.loadData(0);
+
+			System.out.println(mDatas);
+
+			return checkData(mDatas);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			return LoadedResult.ERROR;
+		}
+	}
+
+}

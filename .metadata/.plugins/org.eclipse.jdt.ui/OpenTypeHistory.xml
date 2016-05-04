@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=GooglePlay56/C:\/softwares\/Android\/sdk\/platforms\/android-18\/android.jar&lt;android.app(Application.class[Application" modifiers="33" timestamp="1373508337000"/>
+<typeInfo handle="=GooglePlay56/libs\/android-support-v4.jar&lt;android.support.v4.app(Fragment.class[Fragment" modifiers="33" timestamp="1430700582590"/>
+<typeInfo handle="=GooglePlay56/C:\/softwares\/Android\/sdk\/platforms\/android-18\/android.jar&lt;android.widget(BaseAdapter.class[BaseAdapter" modifiers="1057" timestamp="1373508337000"/>
+<typeInfo handle="=GooglePlay56/libs\/android-support-v4.jar&lt;android.support.v4.view(ViewPager.class[ViewPager" modifiers="33" timestamp="1430700582590"/>
+<typeInfo handle="=GooglePlay56/C:\/softwares\/Android\/sdk\/platforms\/android-18\/android.jar&lt;android.widget(FrameLayout.class[FrameLayout" modifiers="33" timestamp="1373508337000"/>
+<typeInfo handle="=GooglePlay56/src&lt;org.itheima56.googleplay.fragment{BaseFragment.java[BaseFragment" modifiers="1025" timestamp="1430883425319"/>
+<typeInfo handle="=GooglePlay56/src&lt;org.itheima56.googleplay.adapter{SuperBaseAdapter.java[SuperBaseAdapter" modifiers="1025" timestamp="1430986996146"/>
+<typeInfo handle="=GooglePlay56/src&lt;org.itheima56.googleplay.http{BaseProtocol.java[BaseProtocol" modifiers="1025" timestamp="1431055762801"/>
+<typeInfo handle="=GooglePlay56/src&lt;org.itheima56.googleplay.holder{BaseHolder.java[BaseHolder" modifiers="1025" timestamp="1430880344261"/>
+<typeInfo handle="=ProgressButtonDemo/C:\/softwares\/Android\/sdk\/platforms\/android-18\/android.jar&lt;android.widget(Button.class[Button" modifiers="33" timestamp="1373508337000"/>
+<typeInfo handle="=GooglePlay56/C:\/softwares\/Android\/sdk\/platforms\/android-18\/android.jar&lt;android.widget(LinearLayout.class[LinearLayout" modifiers="33" timestamp="1373508337000"/>
+</typeInfoHistroy>

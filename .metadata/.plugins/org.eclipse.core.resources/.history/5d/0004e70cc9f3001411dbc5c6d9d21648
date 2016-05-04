@@ -1,0 +1,57 @@
+package org.itheima56.googleplay.http;
+
+import org.itheima56.googleplay.bean.HomeBean;
+import org.itheima56.googleplay.fragment.LoadingPager.LoadedResult;
+
+import com.google.gson.Gson;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseStream;
+import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+
+/**
+ * @项目名: GooglePlay56
+ * @包名: org.itheima56.googleplay.http
+ * @类名: HomeProtocol
+ * @创建者: 肖琦
+ * @创建时间: 2015-5-6 下午4:15:33
+ * @描述: TODO
+ * 
+ * @svn版本: $Rev$
+ * @更新人: $Author$
+ * @更新时间: $Date$
+ * @更新描述: TODO
+ */
+public class HomeProtocol
+{
+
+	public HomeBean loadData(int index) throws Exception
+	{
+		HttpUtils utils = new HttpUtils();
+		// method,url,header,params
+		String url = "http://10.0.2.2:8080/GooglePlayServer/home";
+		RequestParams params = new RequestParams();
+
+		params.addQueryStringParameter("index", index + "");
+		ResponseStream stream = utils.sendSync(HttpMethod.GET, url, params);
+
+		// 响应码
+		int statusCode = stream.getStatusCode();
+		if (200 == statusCode)
+		{
+			// ##### 1. 数据 json ##########
+			// 访问接口成功
+			// 获取json字符
+			String json = stream.readString();
+			// ##########################
+
+			// ##### 2. 解析 json ##########
+			// 解析json字符
+			Gson gson = new Gson();
+			return gson.fromJson(json, HomeBean.class);
+			// ##########################
+		}
+		return null;
+	}
+}
